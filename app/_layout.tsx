@@ -37,6 +37,10 @@ export default function RootLayout() {
     <Stack>
       <Stack.Screen name="index" options={{ headerShown: true }} />
       <Stack.Screen name="(public)/signin" options={{ headerShown: false }} />
+      <Stack.Screen
+        name="(protected)/profile"
+        options={{ headerShown: false }}
+      />
     </Stack>
   );
 }
