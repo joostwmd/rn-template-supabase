@@ -1,9 +1,11 @@
-import { View, Text } from "react-native";
+import { View } from "react-native";
 import { Auth } from "../../lib/components/Auth";
 import { useEffect } from "react";
-import { supabase } from "../../lib/utils/supabase";
 
-const Page: React.FC = () => {
+const SignIn: React.FC = () => {
+  useEffect(() => {
+    console.log("sign in");
+  }, []);
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <Auth />
@@ -11,4 +13,4 @@ const Page: React.FC = () => {
   );
 };
 
-export default Page;
+export default SignIn;
