@@ -1,8 +1,10 @@
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { useFonts } from "expo-font";
+import { useSegments } from "expo-router";
 import { SplashScreen, Stack } from "expo-router";
 import { useEffect } from "react";
 import { useColorScheme } from "react-native";
+import AuthGuard from "../lib/components/AuthGuard";
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -34,13 +36,15 @@ export default function RootLayout() {
   }
 
   return (
-    <Stack>
-      <Stack.Screen name="index" options={{ headerShown: true }} />
-      <Stack.Screen name="(public)/signin" options={{ headerShown: false }} />
-      <Stack.Screen
-        name="(protected)/profile"
-        options={{ headerShown: false }}
-      />
-    </Stack>
+    <AuthGuard>
+      <Stack>
+        <Stack.Screen name="index" options={{ headerShown: true }} />
+        <Stack.Screen name="(public)/signin" options={{ headerShown: true }} />
+        <Stack.Screen
+          name="(protected)/profile"
+          options={{ headerShown: false }}
+        />
+      </Stack>
+    </AuthGuard>
   );
 }

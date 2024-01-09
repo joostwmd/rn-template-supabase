@@ -1,5 +1,5 @@
 import { View, Text, Button } from "react-native";
-import { Auth } from "../lib/components/Auth";
+import { Auth } from "../lib/components/AuthButton";
 import { useEffect } from "react";
 import { supabase } from "../lib/utils/supabase";
 import { useRouter } from "expo-router";

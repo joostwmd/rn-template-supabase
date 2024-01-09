@@ -1,5 +1,5 @@
-import { View } from "react-native";
-import { Auth } from "../../lib/components/Auth";
+import { Button, View } from "react-native";
+import { AuthButton } from "../../lib/components/AuthButton";
 import { useEffect } from "react";
 import { useRouter } from "expo-router";
 import { supabase } from "../../lib/utils/supabase";
@@ -27,7 +27,11 @@ const SignIn: React.FC = () => {
 
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Auth />
+      <AuthButton />
+      <Button
+        title="profile"
+        onPress={() => router.push("/(protected)/profile")}
+      />
     </View>
   );
 };
