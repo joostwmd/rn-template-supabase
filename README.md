@@ -12,7 +12,11 @@ welcome to this template. here are the steps to bet this up an running in develo
 9. make a development build for android using the eas cli
 10. download the development build onto your android device
 
+so you need to create a development build for ios as well which includes some more steps
 
+good youtube video: https://www.youtube.com/watch?v=6I2JEky20ME
+
+the service id in the supabase dashboard needs to match the bundleIdentifier
 
 taking it to production:
 idk yet
