@@ -4,7 +4,7 @@ import * as SecureStore from "expo-secure-store"
 import * as aesjs from "aes-js"
 import "react-native-get-random-values"
 
-export class SecureStore {
+export class SecureStorage {
   private async _encrypt(key: string, value: string) {
     const encryptionKey = crypto.getRandomValues(new Uint8Array(256 / 8))
 
