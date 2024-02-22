@@ -1,7 +1,7 @@
 import { useSegments } from "expo-router"
 import { useEffect, useState } from "react"
 import { ReactNode } from "react"
-import { supabase } from "../utils/supabase"
+import { supabase } from "../../utils/SupabaseClient"
 import { Session } from "@supabase/supabase-js"
 import { useRouter } from "expo-router"
 type AuthGuardProps = {
@@ -22,9 +22,9 @@ function AuthGuard({ children }: AuthGuardProps) {
 
     getSession()
 
-    // if (segments[0] !== "(public)" && !session) {
-    //   router.push("/(public)/signin")
-    // }
+    if (segments[0] !== "(public)" && !session) {
+      router.push("/(public)/signin")
+    }
   }, [segments])
 
   useEffect(() => {

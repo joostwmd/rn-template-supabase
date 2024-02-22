@@ -1,11 +1,8 @@
-import { View, Text, Button } from "react-native";
-import { AuthButton } from "../lib/components/AuthButton";
-import { useEffect } from "react";
-import { supabase } from "../lib/utils/supabase";
-import { useRouter } from "expo-router";
+import { View, Text, Button } from "react-native"
+import { useRouter } from "expo-router"
 
 const Page: React.FC = () => {
-  const router = useRouter();
+  const router = useRouter()
 
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
@@ -16,7 +13,7 @@ const Page: React.FC = () => {
         onPress={() => router.push("/(public)/signin")}
       />
     </View>
-  );
-};
+  )
+}
 
-export default Page;
+export default Page

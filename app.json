@@ -5,7 +5,7 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "rn-template",
+    "scheme": "rn-template-supabase",
     "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/images/splash.png",
@@ -16,14 +16,14 @@
     "ios": {
       "supportsTablet": true,
       "usesAppleSignIn": true,
-      "bundleIdentifier": "com.joostwmd.rntemplate"
+      "bundleIdentifier": "com.joostwmd.rntemplate-supabase"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.joostwmd.rntemplate"
+      "package": "com.joostwmd.rntemplate.supabase"
     },
     "web": {
       "bundler": "metro",

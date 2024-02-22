@@ -1,13 +1,18 @@
-import React, { useEffect } from "react";
-import { Button, Text, View } from "react-native";
-import { supabase } from "../../lib/utils/supabase";
-import { useRouter } from "expo-router";
+import React, { useEffect } from "react"
+import { Button, Text, View } from "react-native"
+import { supabase } from "../../lib/utils/SupabaseClient"
+import { useRouter } from "expo-router"
+import { handleSignOut } from "../../lib/utils/auth/handleSignOut"
+import {
+  removeProviderRefreshToken,
+  removeProviderToken,
+} from "../../lib/utils/auth/handleProviderTokens"
 
 function Profile() {
-  const router = useRouter();
+  const router = useRouter()
 
   async function logOut() {
-    await supabase.auth.signOut();
+    await handleSignOut()
   }
 
   return (
@@ -16,7 +21,7 @@ function Profile() {
 
       <Button title="Log out" onPress={logOut} />
     </View>
-  );
+  )
 }
 
-export default Profile;
+export default Profile

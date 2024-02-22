@@ -1,5 +1,5 @@
 import * as AppleAuthentication from "expo-apple-authentication"
-import { supabase } from "./../SupabaseClient"
+import { supabase } from "../SupabaseClient"
 import {
   GoogleSignin,
   statusCodes,
@@ -75,21 +75,19 @@ export async function handleGoogleSignIn() {
 
 export async function handleSocialSignIn(provider: Provider, scopes: string[]) {
   const redirectTo = AuthSession.makeRedirectUri()
-  console.log("redirect to", redirectTo)
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: provider,
     options: {
       redirectTo,
       scopes: scopes.join(" "),
+      skipBrowserRedirect: true,
     },
   })
 
   if (error) throw error
 
   if (data) {
-    const res = await WebBrowser.openAuthSessionAsync(data?.url, redirectTo, {
-      showInRecents: true,
-    })
+    const res = await WebBrowser.openAuthSessionAsync(data?.url, redirectTo, {})
     if (res.type === "success") {
       const { url } = res
       const urlObj = new URL(url)
